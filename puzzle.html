@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf -8">
+	<title>Игра в загадки</title>
+	<link rel ="stylesheet" href = "style.css">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
+	<script type = "text/javascript">
+	
+	
+		var score =0;
+		function checkAnswer(inputId, answers){
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for (var i=0; i < answers.length; i++){
+				if(userAnswer == answers[i]){
+					score++;
+					break;
+					}
+				}
+			}
+			
+		function checkAnswers(){
+			
+			checkAnswer ("userAnswer1", ["сон", "сновидение"]);
+			checkAnswer ("userAnswer2", ["слоненок"]);
+			checkAnswer ("userAnswer3", ["осень"]);
+			
+			alert("Вы отгадали " + score + " загадок");
+			}
+	</script>
+</head>
+<body>
+<div class="content">
+<div class= "header">
+<a href = "index.html"> Главная</a>
+<a href = "puzzle.html"> Загадки</a>
+<a href = "typing.html"> Тренажер по обучению слепой печати</a>
+</div>
+ <div class= "contentWrap">
+	<div class= "content">
+		<div class = "center">
+			<h1>Игра в загадки</h1>
+			<div clas= "box">
+			
+			<p> Что можно увидеть с закрытыми глазами? </p>
+			<input type = "text" id = "userAnswer1">
+			
+			<p> Маленький, серый на слона похож?</p>
+			<input type = "text" id = "userAnswer2">
+			
+			<p> Пришла без красок и без кисти и перекрасила все листья?</p>
+			<input type = "text" id = "userAnswer3">
+			
+			<br>
+			<a href = "#" onClick = "checkAnswers();" >Ответить</a>
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+
+
+
+
+<div class = "footer">
+	Copyright &copy; Anastasiia Berezhkova
+</div>
+</body>
+</html>
